@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Welcome to 2 Headed Giant's Deckbuilder and Sideboard Guide</h1>
+
+    <h2>Public Decks</h2> </br>
+    {% for decker in decklist %}
+        <div class = "box scrollmenu">
+            <h3><a href="/view/{{ decker.id }}">{{ decker.deck.name }} by User #{{ decker.user_id }}</a></h3>
+        </div>
+    {% endfor %}
+{% endblock %}

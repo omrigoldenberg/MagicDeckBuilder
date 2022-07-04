@@ -1,0 +1,41 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="mainboard">
+        <p>{{deck.name}}</p>
+        <p class = 'list'>
+          Maindeck<br>
+      <ul>
+          {% for card in red %}
+              <li class = "card red">{{card[0][0]}} {{card[0][1].name }} {{card[1]}} <img src={{ card[0][1].image }} alt="image" /></li>
+          {% endfor %}
+          {% for card in nonred %}
+              <li class = "card nonred">{{card[0]}} {{card[1].name }} <img src={{ card[1].image }} alt="image" /></li>
+          {% endfor %}
+      </ul>
+        </p>
+
+</div>
+<div class="sideboard">
+        <p class = 'list'>
+          Sideboard<br>
+      <ul>
+          {% for card in green %}
+              <li class = "card green">{{card[0][0]}} {{card[0][1].name }}  {{card[1]}}<img src={{ card[0][1].image }} alt="image" /></li>
+          {% endfor %}
+          {% for card in nongreen %}
+              <li class = "card nongreen">{{card[0]}} {{card[1].name }} <img src={{ card[1].image }} alt="image" /></li>
+          {% endfor %}
+      </ul>
+        </p>
+</div>
+<p>{{guide.msg}}</p>
+<div class="votes">
+
+        <p>Upvotes: {{guide.up.keys()|length}}<br>
+          Downvotes {{guide.down.keys()|length}}</p>
+
+</div>
+{% endblock %}

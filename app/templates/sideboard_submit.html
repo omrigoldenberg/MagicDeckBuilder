@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+      <form action="" method="post">
+        {{ form.hidden_tag() }}
+            {{ form.side_out.label }}<br>
+            {{ form.side_out(class_='deck_field', type = 'text', size=100, placeholder = "4 Lightning Bolt..") }}<br>
+            {% for error in form.side_out.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            {{ form.side_in.label }}<br>
+            {{ form.side_in(class_='deck_field', type = 'text', size=100, placeholder = "4 Rest in Peace..") }}<br>
+            {% for error in form.side_in.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %} 
+            {{ form.explanation(class_='name_field', type = 'text', size=100, placeholder = "Explanation...") }}<br>  
+            <p>{{form.submit()}}</p>
+
+      </form>
+{% endblock %}

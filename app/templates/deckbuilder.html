@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="decklist">
+    <h1>Enter DeckList</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.formatfield.label}}
+            {{form.formatfield()}}<br>
+            {{ form.namefield.label }}<br>
+            {{ form.namefield(class_='name_field', type = 'text', size=100, placeholder = "Oops All Spells..") }}<br>
+            {{ form.deckfield.label }}<br>
+            {{ form.deckfield(class_='deck_field', type = 'text', size=100, placeholder = "1 Brainstorm..") }}<br>
+            {{ form.sidefield.label }}<br>
+            {{ form.sidefield(class_='side_field', type = 'text', size=100, placeholder = "1 Stony Silence..") }}<br>
+            {% for error in form.deckfield.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            {% for error in form.sidefield.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+            <p>Hidden
+            {{form.hidden()}}
+            </p>
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    </div>
+{% endblock %}

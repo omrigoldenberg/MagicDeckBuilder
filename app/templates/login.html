@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Is this your first time with us? <a href="{{ url_for('register') }}">Register here</a></p>
+    <h1>Login</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label(class_ = 'label')}}<br>
+            {{ form.username(class_='text_field', size=32, placeholder = "Username..") }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label(class_ = 'label')}}<br>
+            {{ form.password(class_='text_field', size=32, placeholder = "Password..") }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.remember_me.label() }}<br>
+            {{ form.remember_me(class_ = 'remember') }}<br>
+            {% for error in form.remember_me.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit(class_= 'submit') }}</p>
+    </form>
+{% endblock %}
