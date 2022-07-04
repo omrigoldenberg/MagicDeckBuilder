@@ -1,0 +1,125 @@
+.side {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.list {
+  display: inline-block;
+}
+
+.yours{
+     width:70%;
+     height:300px;
+     position:absolute;
+}
+.theirs{
+    width:40%;
+    height:200px;
+    position: relative;
+    top: 315px;
+}
+.element {
+  float: left;
+}
+
+.element a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.element a:hover {
+  background-color: #111;
+}
+
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+
+
+
+.card img { display:none; }
+.card:hover img { display:block; }
+
+
+.text_field {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit {
+  width: 30%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+}
+
+.deck_field {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 50em;
+}
+
+.side_field {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 20em;
+}
+
+.name_field {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 3em;
+}
+.deck_field, .side_field {
+  display: inline-block;
+}
+
+.card li { position:relative; }
+.card li span { position:absolute; display:none; z-index:99; }
+.card li:hover span { display:block; }
+
+img{height: 40%}
+
+a {text-decoration: none}
+
+body {font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif}
+div {display:block;}
